@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Usb_MonotringModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Usb_Monotring.dbo.Monotring' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Monotring">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Server_Name" Type="varchar" MaxLength="1" />
+          <Property Name="Software" Type="datetime" />
+          <Property Name="Software1" Type="datetime" />
+          <Property Name="Software2" Type="datetime" />
+          <Property Name="Software3" Type="datetime" />
+          <Property Name="Software4" Type="datetime" />
+          <Property Name="Software5" Type="datetime" />
+          <Property Name="Software6" Type="datetime" />
+          <Property Name="Software7" Type="datetime" />
+          <Property Name="Software8" Type="datetime" />
+          <Property Name="Software9" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Usb_Monotring.dbo.Monotringin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Monotringin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Server_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Software" Type="time" Precision="0" />
+          <Property Name="Software1" Type="time" Precision="0" />
+          <Property Name="Software2" Type="time" Precision="0" />
+          <Property Name="Software3" Type="time" Precision="0" />
+          <Property Name="Software4" Type="time" Precision="0" />
+          <Property Name="Software5" Type="time" Precision="0" />
+          <Property Name="Software6" Type="time" Precision="0" />
+          <Property Name="Software7" Type="time" Precision="0" />
+          <Property Name="Software8" Type="time" Precision="0" />
+          <Property Name="Software9" Type="time" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="Usb_MonotringModelStoreContainer">
+          <EntitySet Name="Monotring" EntityType="Self.Monotring" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Monotring].[Id] AS [Id], 
+    [Monotring].[Server_Name] AS [Server_Name], 
+    [Monotring].[Software] AS [Software], 
+    [Monotring].[Software1] AS [Software1], 
+    [Monotring].[Software2] AS [Software2], 
+    [Monotring].[Software3] AS [Software3], 
+    [Monotring].[Software4] AS [Software4], 
+    [Monotring].[Software5] AS [Software5], 
+    [Monotring].[Software6] AS [Software6], 
+    [Monotring].[Software7] AS [Software7], 
+    [Monotring].[Software8] AS [Software8], 
+    [Monotring].[Software9] AS [Software9]
+    FROM [dbo].[Monotring] AS [Monotring]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Monotringin" EntityType="Self.Monotringin" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Monotringin].[Id] AS [Id], 
+    [Monotringin].[Server_Name] AS [Server_Name], 
+    [Monotringin].[Software] AS [Software], 
+    [Monotringin].[Software1] AS [Software1], 
+    [Monotringin].[Software2] AS [Software2], 
+    [Monotringin].[Software3] AS [Software3], 
+    [Monotringin].[Software4] AS [Software4], 
+    [Monotringin].[Software5] AS [Software5], 
+    [Monotringin].[Software6] AS [Software6], 
+    [Monotringin].[Software7] AS [Software7], 
+    [Monotringin].[Software8] AS [Software8], 
+    [Monotringin].[Software9] AS [Software9]
+    FROM [dbo].[Monotringin] AS [Monotringin]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Usb_MonotringModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Monotring">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Server_Name" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Software" Type="DateTime" Precision="3" />
+          <Property Name="Software1" Type="DateTime" Precision="3" />
+          <Property Name="Software2" Type="DateTime" Precision="3" />
+          <Property Name="Software3" Type="DateTime" Precision="3" />
+          <Property Name="Software4" Type="DateTime" Precision="3" />
+          <Property Name="Software5" Type="DateTime" Precision="3" />
+          <Property Name="Software6" Type="DateTime" Precision="3" />
+          <Property Name="Software7" Type="DateTime" Precision="3" />
+          <Property Name="Software8" Type="DateTime" Precision="3" />
+          <Property Name="Software9" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="Usb_MonotringEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Monotrings" EntityType="Self.Monotring" />
+          <EntitySet Name="Monotringins" EntityType="Usb_MonotringModel.Monotringin" />
+        </EntityContainer>
+        <EntityType Name="Monotringin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Server_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Software" Type="Time" Precision="0" />
+          <Property Name="Software1" Type="Time" Precision="0" />
+          <Property Name="Software2" Type="Time" Precision="0" />
+          <Property Name="Software3" Type="Time" Precision="0" />
+          <Property Name="Software4" Type="Time" Precision="0" />
+          <Property Name="Software5" Type="Time" Precision="0" />
+          <Property Name="Software6" Type="Time" Precision="0" />
+          <Property Name="Software7" Type="Time" Precision="0" />
+          <Property Name="Software8" Type="Time" Precision="0" />
+          <Property Name="Software9" Type="Time" Precision="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Usb_MonotringModelStoreContainer" CdmEntityContainer="Usb_MonotringEntities">
+          <EntitySetMapping Name="Monotrings">
+            <EntityTypeMapping TypeName="Usb_MonotringModel.Monotring">
+              <MappingFragment StoreEntitySet="Monotring">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Server_Name" ColumnName="Server_Name" />
+                <ScalarProperty Name="Software" ColumnName="Software" />
+                <ScalarProperty Name="Software1" ColumnName="Software1" />
+                <ScalarProperty Name="Software2" ColumnName="Software2" />
+                <ScalarProperty Name="Software3" ColumnName="Software3" />
+                <ScalarProperty Name="Software4" ColumnName="Software4" />
+                <ScalarProperty Name="Software5" ColumnName="Software5" />
+                <ScalarProperty Name="Software6" ColumnName="Software6" />
+                <ScalarProperty Name="Software7" ColumnName="Software7" />
+                <ScalarProperty Name="Software8" ColumnName="Software8" />
+                <ScalarProperty Name="Software9" ColumnName="Software9" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Monotringins">
+            <EntityTypeMapping TypeName="Usb_MonotringModel.Monotringin">
+              <MappingFragment StoreEntitySet="Monotringin">
+                <ScalarProperty Name="Software9" ColumnName="Software9" />
+                <ScalarProperty Name="Software8" ColumnName="Software8" />
+                <ScalarProperty Name="Software7" ColumnName="Software7" />
+                <ScalarProperty Name="Software6" ColumnName="Software6" />
+                <ScalarProperty Name="Software5" ColumnName="Software5" />
+                <ScalarProperty Name="Software4" ColumnName="Software4" />
+                <ScalarProperty Name="Software3" ColumnName="Software3" />
+                <ScalarProperty Name="Software2" ColumnName="Software2" />
+                <ScalarProperty Name="Software1" ColumnName="Software1" />
+                <ScalarProperty Name="Software" ColumnName="Software" />
+                <ScalarProperty Name="Server_Name" ColumnName="Server_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

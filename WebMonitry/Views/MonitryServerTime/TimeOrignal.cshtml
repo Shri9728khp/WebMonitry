@@ -1,0 +1,292 @@
+﻿@model List<WebMonitry.DataDbc.Monotringin>
+<h2>*****Server Time ******</h2>
+<table class="table table-bordered label-info">
+    <tr>
+
+        <th>Id</th>
+        <th>Server_Name</th>
+        <th>Software</th>
+        <th>Software1</th>
+        <th>Software2</th>
+        <th>Software3</th>
+        <th>Software4</th>
+        <th>Software5</th>
+        <th>Software6</th>
+        <th>Software7</th>
+        <th>Software8</th>
+        <th>Software9</th>
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Server_Name</td>
+                <td>@item.Software</td>
+                <td>@item.Software1</td>
+                <td>@item.Software2</td>
+                <td>@item.Software3</td>
+                <td>@item.Software4</td>
+                <td>@item.Software5</td>
+                <td>@item.Software6</td>
+                <td>@item.Software7</td>
+                <td>@item.Software8</td>
+                <td>@item.Software9</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="col-md-10">
+            <label>Enter Software</label>
+            <select id="selectSoftware" class="form-control">
+                <option disabled>----------------Select SoftWare---------------</option>
+                <option>Software1</option>
+                <option>Software2</option>
+                <option>Software3</option>
+                <option>Software4</option>
+                <option>Software5</option>
+                <option>Software6</option>
+                <option>Software7</option>
+                <option>Software8</option>
+                <option>Software9</option>
+                <option>Software10</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <label>Software Time</label>
+
+            <input id="inputTime" type="text" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <label>Current Time</label>
+            <input id="CurTime" type="text" class="form-control" readonly />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" id="change" value="Search" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+<script>
+    var currentdate = new Date();
+    var hours = currentdate.getHours();
+    var minutes = currentdate.getMinutes();
+    var seconds = currentdate.getSeconds();
+    if (hours < 10) {
+        hours = "0" + hours.toString();
+    }
+    if (minutes < 10) {
+        minutes = "0" + minutes.toString();
+    }
+    if (seconds < 10) {
+        seconds = "0" + seconds.toString();
+    }
+    var Time = hours + ":" + minutes + ":" + seconds;
+    //console.log(Time);
+    $(document).ready(function () {
+        $('#CurTime').val(Time);
+    });
+    $('#selectSoftware').click(function () {
+        $('table > tbody  > tr> td').each(function (index, td) {
+            var res = $('#selectSoftware').val();
+            if (res == 'Software1') {
+                if (index == 2) {
+                    var time = $(this).html();
+                    $('#inputTime').val(time);
+                }
+            }
+            if (res == 'Software2') {
+                if (index == 3) {
+                    var time = $(this).html();
+                    $('#inputTime').val(time);
+                }
+            }
+            if (res == 'Software3') {
+                if (index == 4) {
+                    var time = $(this).html();
+                    $('#inputTime').val(time);
+                }
+            }
+            if (res == 'Software4') {
+                if (index == 5) {
+                    var time = $(this).html();
+                    $('#inputTime').val(time);
+                }
+            }
+            if (res == 'Software5') {
+                if (index == 6) {
+                    var time = $(this).html();
+                    $('#inputTime').val(time);
+                }
+            } if (res == 'Software6') {
+                if (index == 7) {
+                    var time = $(this).html();
+                    $('#inputTime').val(time);
+                }
+            }
+            if (res == 'Software7') {
+                if (index == 8) {
+                    var time = $(this).html();
+                    $('#inputTime').val(time);
+                }
+            }
+            if (res == 'Software8') {
+                if (index == 9) {
+                    var time = $(this).html();
+                    $('#inputTime').val(time);
+                }
+            }
+            if (res == 'Software9') {
+                if (index == 10) {
+                    var time = $(this).html();
+                    $('#inputTime').val(time);
+                }
+            }
+            if (res == 'Software10') {
+                if (index == 11) {
+                    var time = $(this).html();
+                    $('#inputTime').val(time);
+                }
+            }
+        });
+    });
+    $('#change').click(function () {
+        var inTime = $('#inputTime').val();
+        var currTime = $('#CurTime').val();
+        var inputTime = new Date("November 13, 2013 " + inTime);
+        var currentTime = new Date("November 13, 2013 " + currTime);
+        var a = inputTime.getTime() / 1000000;
+        var b = currentTime.getTime() / 1000000;
+        console.log(b - a);
+        $('table > tbody  > tr> td').each(function (index, td) {
+            var res = $('#selectSoftware').val();
+            if (res == 'Software1') {
+                if (index == 2) {
+
+                    if (b - a > .3) {
+                        $(this).css('background-color', 'red');
+                    }
+                    else {
+                        $(this).css('background-color', 'green');
+                    }
+                }
+            }
+            if (res == 'Software2') {
+                if (index == 3) {
+                    var time = $(this).html();
+                    if (b - a > .3) {
+                        $(this).css('background-color', 'red');
+                    }
+                    else {
+                        $(this).css('background-color', 'green');
+
+                    }
+                }
+            }
+            if (res == 'Software3') {
+                if (index == 4) {
+                    var time = $(this).html();
+                    if (b - a > .3) {
+                        $(this).css('background-color', 'red');
+                    }
+                    else {
+                        $(this).css('background-color', 'green');
+
+                    }
+                }
+            }
+            if (res == 'Software4') {
+                if (index == 5) {
+                    var time = $(this).html();
+                    if (b - a > .3) {
+                        $(this).css('background-color', 'red');
+                    }
+                    else {
+                        $(this).css('background-color', 'green');
+
+                    }
+                }
+            }
+            if (res == 'Software5') {
+                if (index == 6) {
+                    var time = $(this).html();
+                    if (b - a > .3) {
+                        $(this).css('background-color', 'red');
+                    }
+                    else {
+                        $(this).css('background-color', 'green');
+
+                    }
+                }
+            } if (res == 'Software6') {
+                if (index == 7) {
+                    var time = $(this).html();
+                    if (b - a > .3) {
+                        $(this).css('background-color', 'red');
+                    }
+                    else {
+                        $(this).css('background-color', 'green');
+
+                    }
+                }
+            }
+            if (res == 'Software7') {
+                if (index == 8) {
+                    var time = $(this).html();
+                    if (b - a > .3) {
+                        $(this).css('background-color', 'red');
+                    }
+                    else {
+                        $(this).css('background-color', 'green');
+
+                    }
+                }
+            }
+            if (res == 'Software8') {
+                if (index == 9) {
+                    var time = $(this).html();
+                    if (b - a > .3) {
+                        $(this).css('background-color', 'red');
+                    }
+                    else {
+                        $(this).css('background-color', 'green');
+
+                    }
+                }
+            }
+            if (res == 'Software9') {
+                if (index == 10) {
+                    var time = $(this).html();
+                    if (b - a > .3) {
+                        $(this).css('background-color', 'red');
+                    }
+                    else {
+                        $(this).css('background-color', 'green');
+
+                    }
+                }
+            }
+            if (res == 'Software10') {
+                if (index == 11) {
+                    var time = $(this).html();
+                    if (b - a > .3) {
+                        $(this).css('background-color', 'red');
+                    }
+                    else {
+                        $(this).css('background-color', 'green');
+
+                    }
+                }
+            }
+        });
+
+    });
+</script>
